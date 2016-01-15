@@ -14,6 +14,7 @@
 		3FEE21BC1C4950D90072EB38 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FEE21BA1C4950D90072EB38 /* LaunchScreen.storyboard */; };
 		3FEE21C71C4950D90072EB38 /* Table_ViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEE21C61C4950D90072EB38 /* Table_ViewTests.swift */; };
 		3FEE21D21C4950D90072EB38 /* Table_ViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEE21D11C4950D90072EB38 /* Table_ViewUITests.swift */; };
+		3FEE21E01C4953B00072EB38 /* College.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEE21DF1C4953B00072EB38 /* College.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		3FEE21CD1C4950D90072EB38 /* Table ViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Table ViewUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FEE21D11C4950D90072EB38 /* Table_ViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Table_ViewUITests.swift; sourceTree = "<group>"; };
 		3FEE21D31C4950D90072EB38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3FEE21DF1C4953B00072EB38 /* College.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = College.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				3FEE21B11C4950D90072EB38 /* AppDelegate.swift */,
 				3FEE21B31C4950D90072EB38 /* ViewController.swift */,
+				3FEE21DF1C4953B00072EB38 /* College.swift */,
 				3FEE21B51C4950D90072EB38 /* Main.storyboard */,
 				3FEE21B81C4950D90072EB38 /* Assets.xcassets */,
 				3FEE21BA1C4950D90072EB38 /* LaunchScreen.storyboard */,
@@ -261,6 +264,7 @@
 			files = (
 				3FEE21B41C4950D90072EB38 /* ViewController.swift in Sources */,
 				3FEE21B21C4950D90072EB38 /* AppDelegate.swift in Sources */,
+				3FEE21E01C4953B00072EB38 /* College.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

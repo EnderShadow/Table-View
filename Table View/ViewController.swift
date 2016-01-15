@@ -1,25 +1,93 @@
 //
 //  ViewController.swift
-//  Table View
+//  tableView
 //
-//  Created by mwarren on 1/15/16.
-//  Copyright © 2016 mwarren. All rights reserved.
+//  Created by Mathien on 1/12/16.
+//  Copyright © 2016 Mathien. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
-
-    override func viewDidLoad() {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate
+{
+    @IBOutlet weak var myTableView: UITableView!
+    
+    var colleges = [
+        College(name: "Carnegie Mellon", location: "Pittsburgh, Pennsylvania", numStudents: "13285", image: nil),
+        College(name: "University of Illinois", location: "Urbana-Champagne, Illinois", numStudents: "44087", image: nil),
+        College(name: "Depauw", location: "Greencastle, Indiana", numStudents: "2310", image: nil)
+    ]
+    
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        myTableView.dataSource = self
+        myTableView.delegate = self
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    @IBAction func addButtonTapped(sender: AnyObject)
+    {
+        let myAlert = UIAlertController(title: "Add College", message: nil, preferredStyle: .Alert)
+        
+        myAlert.addTextFieldWithConfigurationHandler { (name) -> Void in
+            name.placeholder = "College Name"
+        }
+        myAlert.addTextFieldWithConfigurationHandler { (location) -> Void in
+            location.placeholder = "College Location"
+        }
+        myAlert.addTextFieldWithConfigurationHandler { (numStudents) -> Void in
+            numStudents.placeholder = "Number of Students"
+        }
+        
+        let addAction = UIAlertAction(title: "Add", style: .Default) { (addAction) -> Void in
+            self.colleges.append(College(name: myAlert.textFields![0].text!, location: myAlert.textFields![1].text!, numStudents: myAlert.textFields![2].text!))
+            self.myTableView.reloadData()
+        }
+        myAlert.addAction(addAction)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil)
+        myAlert.addAction(cancelAction)
+        
+        self.presentViewController(myAlert, animated: true, completion: nil)
     }
-
-
+    
+    @IBAction func editButtonTapped(sender: UIBarButtonItem)
+    {
+        myTableView.editing = !myTableView.editing
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+    {
+        let cell = myTableView.dequeueReusableCellWithIdentifier("myCell", forIndexPath: indexPath)
+        cell.textLabel!.text = colleges[indexPath.row].name
+        cell.detailTextLabel?.text = colleges[indexPath.row].location
+        
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
+        return colleges.count
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath)
+    {
+        if editingStyle == .Delete
+        {
+            colleges.removeAtIndex(indexPath.row)
+            myTableView.reloadData()
+        }
+    }
+    
+    func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool
+    {
+        return true
+    }
+    
+    func tableView(tableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath)
+    {
+        let college = colleges[sourceIndexPath.row]
+        colleges.removeAtIndex(sourceIndexPath.row)
+        colleges.insert(college, atIndex: destinationIndexPath.row)
+    }
 }
-
