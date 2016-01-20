@@ -97,7 +97,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F0I-9i-zei">
-                                <rect key="frame" x="51" y="91" width="150" height="30"/>
+                                <rect key="frame" x="153" y="249" width="150" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="IoF-Zc-16V"/>
                                 </constraints>
@@ -105,7 +105,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fsa-SH-bQJ">
-                                <rect key="frame" x="51" y="129" width="150" height="30"/>
+                                <rect key="frame" x="153" y="287" width="150" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="V6f-uv-46G"/>
                                 </constraints>
@@ -113,20 +113,13 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Population" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rai-PD-1oK">
-                                <rect key="frame" x="51" y="167" width="150" height="30"/>
+                                <rect key="frame" x="153" y="325" width="150" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="r58-wN-6cG"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eCq-UJ-Znb">
-                                <rect key="frame" x="113" y="205" width="250" height="150"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="250" id="5jG-Xr-Gkh"/>
-                                    <constraint firstAttribute="height" constant="150" id="L4r-NM-glu"/>
-                                </constraints>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tNt-a8-W1g">
                                 <rect key="frame" x="202" y="363" width="53" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
@@ -135,6 +128,13 @@
                                     <action selector="onSave:" destination="yrN-6R-E6A" eventType="touchUpInside" id="bWt-kh-juL"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eCq-UJ-Znb">
+                                <rect key="frame" x="103" y="91" width="250" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="5jG-Xr-Gkh"/>
+                                    <constraint firstAttribute="height" constant="150" id="L4r-NM-glu"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
