@@ -13,9 +13,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var myTableView: UITableView!
     
     var colleges = [
-        College(name: "Carnegie Mellon", location: "Pittsburgh, Pennsylvania", numStudents: "13285", image: nil),
-        College(name: "University of Illinois", location: "Urbana-Champagne, Illinois", numStudents: "44087", image: nil),
-        College(name: "Depauw", location: "Greencastle, Indiana", numStudents: "2310", image: nil)
+        College(name: "Carnegie Mellon", location: "Pittsburgh, Pennsylvania", numStudents: "13285", image: "carnegie_mellon"),
+        College(name: "University of Illinois", location: "Urbana-Champagne, Illinois", numStudents: "44087", image: "uoi-uc"),
+        College(name: "Depauw", location: "Greencastle, Indiana", numStudents: "2310", image: "depauw")
     ]
     
     override func viewDidLoad()
@@ -54,6 +54,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBAction func editButtonTapped(sender: UIBarButtonItem)
     {
         myTableView.editing = !myTableView.editing
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
+        let dvc = segue.destinationViewController as! DetailViewController
+        dvc.college = colleges[myTableView.indexPathForSelectedRow!.row]
+    }
+    
+    override func viewWillAppear(animated: Bool)
+    {
+        myTableView.reloadData()
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell

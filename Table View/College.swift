@@ -13,14 +13,14 @@ class College
     var name: String
     var location: String
     var numStudents: String
-    var image: UIImageView?
+    var image: UIImage?
     
-    init(name: String, location: String, numStudents: String, image: UIImageView?)
+    init(name: String, location: String, numStudents: String, image: String?)
     {
         self.name = name;
         self.location = location
         self.numStudents = numStudents
-        self.image = image
+        self.image = image != nil ? UIImage(named: image!) : nil
     }
     
     convenience init(name: String, location: String, numStudents: String)
