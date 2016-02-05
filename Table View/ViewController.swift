@@ -13,9 +13,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var myTableView: UITableView!
     
     var colleges = [
-        College(name: "Carnegie Mellon", location: "Pittsburgh, Pennsylvania", numStudents: "13285", image: "carnegie_mellon"),
-        College(name: "University of Illinois", location: "Urbana-Champagne, Illinois", numStudents: "44087", image: "uoi-uc"),
-        College(name: "Depauw", location: "Greencastle, Indiana", numStudents: "2310", image: "depauw")
+        College(name: "Carnegie Mellon", location: "Pittsburgh, Pennsylvania", numStudents: "13285", website: "https://www.cmu.edu/", image: "carnegie_mellon"),
+        College(name: "University of Illinois", location: "Urbana-Champagne, Illinois", numStudents: "44087", website: "http://illinois.edu/", image: "uoi-uc"),
+        College(name: "Depauw", location: "Greencastle, Indiana", numStudents: "2310", website: "http://www.depauw.edu/", image: "depauw")
     ]
     
     override func viewDidLoad()
@@ -38,9 +38,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         myAlert.addTextFieldWithConfigurationHandler { (numStudents) -> Void in
             numStudents.placeholder = "Number of Students"
         }
+        myAlert.addTextFieldWithConfigurationHandler { (website) -> Void in
+            website.placeholder = "Website Url"
+        }
         
         let addAction = UIAlertAction(title: "Add", style: .Default) { (addAction) -> Void in
-            self.colleges.append(College(name: myAlert.textFields![0].text!, location: myAlert.textFields![1].text!, numStudents: myAlert.textFields![2].text!))
+            self.colleges.append(College(name: myAlert.textFields![0].text!, location: myAlert.textFields![1].text!, numStudents: myAlert.textFields![2].text!, website: myAlert.textFields![3].text!))
             self.myTableView.reloadData()
         }
         myAlert.addAction(addAction)
