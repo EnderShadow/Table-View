@@ -136,12 +136,16 @@
                                     <action selector="onWebsiteOpenPressed" destination="yrN-6R-E6A" eventType="touchUpInside" id="DSr-dp-rph"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eCq-UJ-Znb">
+                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eCq-UJ-Znb">
                                 <rect key="frame" x="103" y="91" width="250" height="150"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="5jG-Xr-Gkh"/>
                                     <constraint firstAttribute="height" constant="150" id="L4r-NM-glu"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="hC7-G2-OeM" appends="YES" id="AuG-Gg-KvJ"/>
+                                </connections>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tNt-a8-W1g">
                                 <rect key="frame" x="202" y="446" width="53" height="41"/>
@@ -172,6 +176,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TMh-Nb-Kfr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="hC7-G2-OeM">
+                    <connections>
+                        <action selector="onImageTapped:" destination="yrN-6R-E6A" id="b64-wI-cpn"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1728" y="-263"/>
         </scene>
