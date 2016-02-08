@@ -14,7 +14,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     var colleges = [
         College(name: "Carnegie Mellon", location: "Pittsburgh, Pennsylvania", numStudents: "13285", website: "https://www.cmu.edu/", image: "carnegie_mellon"),
-        College(name: "University of Illinois", location: "Urbana-Champagne, Illinois", numStudents: "44087", website: "http://illinois.edu/", image: "uoi-uc"),
+        College(name: "University of Illinois", location: "Urbana-Champagne, Illinois", numStudents: "44087", website: "http://www.illinois.edu/", image: "uoi-uc"),
         College(name: "Depauw", location: "Greencastle, Indiana", numStudents: "2310", website: "http://www.depauw.edu/", image: "depauw")
     ]
     
