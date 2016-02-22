@@ -64,4 +64,13 @@ class DetailViewController: UIViewController, SFSafariViewControllerDelegate, UI
             self.collegeImageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
         }
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
+        if segue.identifier == "mapView"
+        {
+            let mvc = segue.destinationViewController as! MapViewComtroller
+            mvc.searchLoc = college.name + ", " + college.location
+        }
+    }
 }
