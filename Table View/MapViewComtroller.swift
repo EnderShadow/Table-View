@@ -8,12 +8,22 @@
 
 import UIKit
 import MapKit
+import QuartzCore
 
 class MapViewComtroller: UIViewController, UITextFieldDelegate
 {
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var searchButton: UIButton!
+    
     var searchLoc: String!
+    
+    override func loadView()
+    {
+        super.loadView()
+        searchButton.layer.cornerRadius = 7
+        searchButton.clipsToBounds = true
+    }
     
     override func viewDidLoad()
     {
